@@ -2,9 +2,9 @@ var config = require('../')
 var test = require('tape')
 
 test('test basic properties of config', function (t) {
-  t.ok(isObject(config.parserOptions))
+  t.ok(isObject(config.env))
   t.ok(isObject(config.rules))
-  t.ok(Array.isArray(config.plugins))
+  t.ok(Array.isArray(config.extends))
   t.end()
 })
 

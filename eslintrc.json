@@ -1,4 +1,5 @@
 {
+  "extends": ["airbnb", "prettier", "prettier/react"],
   "rules": {
     "linebreak-style": "off",
     "semi": ["error", "always"],
