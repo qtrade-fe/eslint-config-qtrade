@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-qtrade",
-  "description": "JavaScript Standard Style React/JSX support - ESLint Shareable Config",
+  "description": "JavaScript Style React/JSX support - ESLint Shareable Config",
   "version": "1.0.0",
   "author": {
     "name": "Gui Gu",
@@ -16,7 +16,7 @@
   },
   "homepage": "https://github.com/qtrade-fe/eslint-config-qtrade",
   "keywords": [
-    "JavaScript Standard Style",
+    "JavaScript Style",
     "check",
     "checker",
     "code",
@@ -35,8 +35,6 @@
     "policy",
     "quality",
     "simple",
-    "standard",
-    "standard style",
     "style",
     "style checker",
     "style linter",
@@ -45,7 +43,9 @@
   "license": "MIT",
   "main": "index.js",
   "peerDependencies": {
-    "eslint": ">=5.0.0"
+    "eslint": ">=6.1.0",
+    "eslint-config-airbnb": ">=18.0.0",
+    "eslint-config-prettier": ">=6.1.0"
   },
   "repository": {
     "type": "git",

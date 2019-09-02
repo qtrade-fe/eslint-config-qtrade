@@ -5,77 +5,64 @@
 [npm-image]: https://img.shields.io/npm/v/eslint-config-qtrade.svg
 [npm-url]: https://npmjs.org/package/eslint-config-qtrade
 
-#### An ESLint [Shareable Config](http://eslint.org/docs/developer-guide/shareable-configs) for React/JSX support in [JavaScript Standard Style](https://github.com/standard/standard)
-
-[![js-standard-style](https://cdn.rawgit.com/standard/standard/master/badge.svg)](https://github.com/standard/standard)
-
-## Install
-
-This module is for advanced users. You probably want to use [`standard`](https://github.com/standard/standard) instead :)
-
-```bash
-npm install eslint-config-qtrade
-```
+This package provides Qtrade's .eslintrc as an extensible shared config.
 
 ## Usage
 
-Shareable configs are designed to work with the `extends` feature of `.eslintrc` files.
-You can learn more about
-[Shareable Configs](http://eslint.org/docs/developer-guide/shareable-configs) on the
-official ESLint website.
+We export three ESLint configurations for your usage.
 
-This Shareable Config adds React and JSX to the baseline JavaScript Standard Style rules
-provided in `eslint-config-standard`.
+### eslint-config-airbnb
 
-Here's how to install everything you need:
+Our default export contains all of our ESLint rules, including ECMAScript 6+ and React. It requires `eslint`, `eslint-config-airbnb`,and `eslint-config-prettier`.
 
-```bash
-npm install --save-dev babel-eslint eslint-config-standard eslint-config-qtrade eslint-plugin-standard eslint-plugin-promise eslint-plugin-import eslint-plugin-node eslint-plugin-react
-```
+1. Install the correct versions of each package, which are listed by the command:
 
-Then, add this to your `.eslintrc` file:
+  ```sh
+  npm info "eslint-config-qtrade@latest" peerDependencies
+  ```
 
-```
-{
-  "parser": "babel-eslint",
-  "extends": ["standard", "standard-react"]
-}
-```
+  If using **npm 5+**, use this shortcut
 
-*Note: We omitted the `eslint-config-` prefix since it is automatically assumed by ESLint.*
+  ```sh
+  npx install-peerdeps --dev eslint-config-qtrade
+  ```
 
-You can override settings from the shareable config by adding them directly into your
-`.eslintrc` file.
+  If using **yarn**, you can also use the shortcut described above if you have npm 5+ installed on your machine, as the command will detect that you are using yarn and will act accordingly.
+  Otherwise, run `npm info "eslint-config-qtrade@latest" peerDependencies` to list the peer dependencies and versions, then run `yarn add --dev <dependency>@<version>` for each listed peer dependency.
 
-### Looking for something easier than this?
+  If using **npm < 5**, Linux/OSX users can run
 
-The easiest way to use JavaScript Standard Style to check your code is to use the
-[`standard`](https://github.com/standard/standard) package. This comes with a global
-Node command line program (`standard`) that you can run or add to your `npm test` script
-to quickly check your style.
+  ```sh
+  (
+    export PKG=eslint-config-qtrade;
+    npm info "$PKG@latest" peerDependencies --json | command sed 's/[\{\},]//g ; s/: /@/g' | xargs npm install --save-dev "$PKG@latest"
+  )
+  ```
 
-## Badge
+  Which produces and runs a command like:
 
-Use this in one of your projects? Include one of these badges in your readme to
-let people know that your code is using the standard style.
+  ```sh
+  npm install --save-dev eslint-config-qtrade eslint@^#.#.# eslint-plugin-jsx-a11y@^#.#.# eslint-plugin-import@^#.#.# eslint-plugin-react@^#.#.# eslint-plugin-react-hooks@^#.#.#
+  ```
 
-[![js-standard-style](https://cdn.rawgit.com/standard/standard/master/badge.svg)](https://github.com/standard/standard)
+  If using **npm < 5**, Windows users can either install all the peer dependencies manually, or use the [install-peerdeps](https://github.com/nathanhleung/install-peerdeps) cli tool.
 
-```markdown
-[![js-standard-style](https://cdn.rawgit.com/standard/standard/master/badge.svg)](https://github.com/standard/standard)
-```
+  ```sh
+  npm install -g install-peerdeps
+  install-peerdeps --dev eslint-config-qtrade
+  ```
+  The cli will produce and run a command like:
 
-[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](https://github.com/standard/standard)
+  ```sh
+  npm install --save-dev eslint-config-qtrade eslint@^#.#.# eslint-plugin-jsx-a11y@^#.#.# eslint-plugin-import@^#.#.# eslint-plugin-react@^#.#.# eslint-plugin-react-hooks@^#.#.#
+  ```
 
-```markdown
-[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](https://github.com/standard/standard)
-```
+2. Add `"extends": "qtrade"` to your `.eslintrc`
 
-## Learn more
+## Improving this config
 
-For the full listing of rules, editor plugins, FAQs, and more, visit the main
-[JavaScript Standard Style repo](https://github.com/standard/standard).
+Consider adding test cases if you're making complicated rules changes, like anything involving regexes. Perhaps in a distant future, we could use literate programming to structure our README as test cases for our .eslintrc?
 
-## License
+You can run tests with `npm test`.
 
-MIT. Copyright (c) [Feross Aboukhadijeh](http://feross.org).
+You can make sure this module lints with itself using `npm run eslint`.
