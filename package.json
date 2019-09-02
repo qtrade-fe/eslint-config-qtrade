@@ -59,6 +59,7 @@
     "url": "git://github.com/qtrade-fe/eslint-config-qtrade.git"
   },
   "scripts": {
-    "test": "tape test/*.js"
+    "test": "tape test/*.js",
+    "semantic-release": "semantic-release"
   }
 }
