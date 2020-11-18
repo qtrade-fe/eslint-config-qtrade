@@ -18,7 +18,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.14.3",
     "eslint-plugin-react-hooks": "^1.7.0",
-    "semantic-release": "^15.13.24",
+    "semantic-release": "^17.2.3",
     "tape": "^4.8.0"
   },
   "homepage": "https://github.com/qtrade-fe/eslint-config-qtrade",
